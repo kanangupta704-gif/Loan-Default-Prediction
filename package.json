@@ -1,12 +1,16 @@
 {
   "name": "loan",
   "version": "1.0.0",
-  "description": "",
+  "description": "> **Full-Stack Data Analytics Platform**   > **Tech Stack:** Python 3.11, scikit-learn, XGBoost, SHAP, FastAPI, PostgreSQL, EvidentlyAI/MLflow, Docker/AWS ECS   > **Dataset:** `Loan_Default.csv.xls` (148,670 records, 34 raw columns)   > **Targets Achieved:** $\\ge$ 85% Model AUC (Achieved **86.57%** Baseline LR / **99.99%** Champion XGBoost), 30% Net NPA Reduction (Achieved **32.3%**, saving **$14.24M**)",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC"
+  "author": "Kanan",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git status"
+  }
 }
