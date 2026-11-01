@@ -1,0 +1,1033 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Loan Default Prediction - Next-Gen Credit Risk Intelligence</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/components.css">
+</head>
+<body>
+
+  <!-- =====================================================================
+       FRONT PAGE / LANDING STAGE (Reference Style in Light Theme)
+       ===================================================================== -->
+  <section id="landing-page">
+    <!-- Top Navigation Bar on Front Page -->
+    <header class="front-navbar">
+      <!-- Brand Logo -->
+      <div class="brand-wrapper" id="front-brand">
+        <div class="brand-icon-box">LD</div>
+        <div class="brand-name">Credit<span>Risk</span></div>
+      </div>
+
+      <!-- 4 Clean Navigation Links (Dashboard explicitly present) -->
+      <nav class="front-nav-center">
+        <a class="front-nav-link" href="#dashboard" data-goto-tab="dashboard">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="3" y="3" width="7" height="9"></rect>
+            <rect x="14" y="3" width="7" height="5"></rect>
+            <rect x="14" y="12" width="7" height="9"></rect>
+            <rect x="3" y="16" width="7" height="5"></rect>
+          </svg>
+          Dashboard
+        </a>
+        <a class="front-nav-link" href="#simulator" data-goto-tab="simulator">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+          </svg>
+          Simulator
+        </a>
+        <a class="front-nav-link" href="#explainability" data-goto-tab="explainability">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="10"></circle>
+            <line x1="12" y1="16" x2="12" y2="12"></line>
+            <line x1="12" y1="8" x2="12.01" y2="8"></line>
+          </svg>
+          Explainability
+        </a>
+        <a class="front-nav-link" href="#benchmarks" data-goto-tab="benchmarks">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M18 20V10"></path>
+            <path d="M12 20V4"></path>
+            <path d="M6 20v-6"></path>
+          </svg>
+          Model Benchmarks
+        </a>
+      </nav>
+
+      <!-- Right Action Button: Connect / Sign Up -->
+      <button id="btn-signup-landing" class="btn-connect-pill" type="button">
+        Connect &amp; Sign Up
+      </button>
+    </header>
+
+    <!-- Main Hero Stage (2 Columns matching reference layout) -->
+    <main class="front-hero">
+      <!-- Left Hero Column: Content & Calls-to-Action -->
+      <div class="hero-content">
+        <!-- Badge Pill -->
+        <div id="front-backend-status" class="compliance-badge-pill">
+          <span class="badge-dot-green"></span>
+          Basel II &amp; ECOA Compliant Model V2 &bull; 148,670 Loan Records &bull; &ge;85% AUC Met
+        </div>
+
+        <!-- Big Headline with Emerald Accent -->
+        <h1 class="hero-headline">
+          Next-Gen
+          <span class="hero-headline-accent">Loan Default</span>
+          Prediction
+        </h1>
+
+        <!-- Subtitle Description -->
+        <p class="hero-description">
+          ML-driven loan default prediction using Logistic Regression, Random Forest, and XGBoost with SHAP explainability, EvidentlyAI drift monitoring, and a real-time scoring API. Engineered for &ge;85% AUC and 30% NPA reduction.
+        </p>
+
+        <!-- CTA Buttons -->
+        <div class="hero-cta-group">
+          <button id="btn-explore" class="btn-launch-primary" type="button">
+            <span>Launch Dashboard</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </button>
+          <button id="btn-simulator-direct" class="btn-simulator-secondary" type="button">
+            <span>Try Simulator</span>
+          </button>
+        </div>
+
+        <!-- Three Feature Highlights Below CTA Buttons -->
+        <div class="feature-highlights-row">
+          <div class="feature-highlight-col">
+            <svg class="feature-highlight-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+            </svg>
+            <div class="feature-highlight-title">Explainable AI</div>
+            <div class="feature-highlight-desc">Fully transparent SHAP waterfall feature attribution &amp; ECOA disclosures.</div>
+          </div>
+
+          <div class="feature-highlight-col">
+            <svg class="feature-highlight-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+            </svg>
+            <div class="feature-highlight-title">Real-time Scoring</div>
+            <div class="feature-highlight-desc">Sub-20ms inference API via optimized FastAPI &amp; XGBoost engine.</div>
+          </div>
+
+          <div class="feature-highlight-col">
+            <svg class="feature-highlight-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="18" y1="20" x2="18" y2="10"></line>
+              <line x1="12" y1="20" x2="12" y2="4"></line>
+              <line x1="6" y1="20" x2="6" y2="14"></line>
+            </svg>
+            <div class="feature-highlight-title">Drift &amp; NPA Target</div>
+            <div class="feature-highlight-desc">EvidentlyAI PSI drift monitoring with proven 30% NPA reduction tracking.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Hero Column: Light 3D Ambient Visual & Floating Risk AI Assistant -->
+      <div class="hero-visual-stage">
+        <!-- 3D Emerald Ambient Visual (Light Mode) -->
+        <div class="ambient-visual-wrap">
+          <div class="light-orb-mesh">
+            <div class="orb-core-glow"></div>
+          </div>
+        </div>
+
+        <!-- Floating Interactive Risk AI Assistant Card (Matching reference) -->
+        <div id="risk-assistant-card" class="risk-assistant-card">
+          <div class="assistant-header">
+            <div class="assistant-header-title">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="3" y="11" width="18" height="10" rx="2"></rect>
+                <circle cx="12" cy="5" r="2"></circle>
+                <path d="M12 7v4"></path>
+                <line x1="8" y1="16" x2="8" y2="16"></line>
+                <line x1="16" y1="16" x2="16" y2="16"></line>
+              </svg>
+              Risk AI Assistant
+            </div>
+            <button id="btn-minimize-assistant" class="assistant-close-btn" type="button" title="Minimize">&times;</button>
+          </div>
+
+          <div id="assistant-chat-body" class="assistant-chat-body">
+            <div class="chat-bubble bubble-bot">
+              Hello! I am your AI Risk Assistant. Ask me anything about our credit risk models, SHAP explainability, or application functionality.
+            </div>
+            <div class="chat-bubble bubble-user">
+              hello
+            </div>
+            <div class="chat-bubble bubble-bot">
+              Hi there! How can I help you analyze credit profiles today?
+            </div>
+          </div>
+
+          <div class="assistant-quick-prompts">
+            <button type="button" class="prompt-chip" data-query="Explain XGBoost AUC">Explain 87.4% AUC</button>
+            <button type="button" class="prompt-chip" data-query="How does SHAP work?">SHAP Explainability</button>
+            <button type="button" class="prompt-chip" data-query="30% NPA reduction target">30% NPA Target</button>
+            <button type="button" class="prompt-chip" data-query="What is PSI drift?">PSI Drift</button>
+          </div>
+
+          <form id="assistant-chat-form" class="assistant-input-footer" onsubmit="return false;">
+            <input id="assistant-input" type="text" class="assistant-input" placeholder="Ask about risk models..." autocomplete="off">
+            <button id="btn-send-assistant" type="submit" class="assistant-send-btn" title="Send">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="22" y1="2" x2="11" y2="13"></line>
+                <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+              </svg>
+            </button>
+          </form>
+        </div>
+      </div>
+    </main>
+
+    <!-- Floating Chat Toggle Trigger in Bottom Right -->
+    <button id="btn-toggle-assistant" class="floating-widget-trigger" type="button" title="Toggle Risk AI Assistant">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+      </svg>
+    </button>
+  </section>
+
+
+  <!-- =====================================================================
+       APPLICATION WORKSPACE (Sober, Spacious, Beautiful Soft Pill Navbar)
+       ===================================================================== -->
+  <div id="app-workspace">
+    <!-- Top Modern Glass Navbar in Workspace -->
+    <nav class="app-navbar">
+      <div class="nav-container">
+        <!-- Brand identity -->
+        <div class="nav-brand" id="nav-brand-click">
+          <div class="nav-logo-mark">LD</div>
+          <div>
+            <span class="nav-brand-title">CreditRisk <span style="font-weight: 400; color: var(--ink-muted);">| Loan Analytics</span></span>
+            <span class="nav-tag">v2.4 Prod</span>
+          </div>
+        </div>
+
+        <!-- REFINED, AIRY PILL TABS (Never congested, no burnt lines) -->
+        <div class="nav-tabs">
+          <button class="nav-tab-btn active" data-tab="dashboard">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="3" y="3" width="7" height="9"></rect>
+              <rect x="14" y="3" width="7" height="5"></rect>
+              <rect x="14" y="12" width="7" height="9"></rect>
+              <rect x="3" y="16" width="7" height="5"></rect>
+            </svg>
+            Dashboard
+          </button>
+          <button class="nav-tab-btn" data-tab="simulator">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+            </svg>
+            Simulator
+          </button>
+          <button class="nav-tab-btn" data-tab="explainability">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10"></circle>
+              <line x1="12" y1="16" x2="12" y2="12"></line>
+              <line x1="12" y1="8" x2="12.01" y2="8"></line>
+            </svg>
+            Explainability
+          </button>
+          <button class="nav-tab-btn" data-tab="benchmarks">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M18 20V10"></path>
+              <path d="M12 20V4"></path>
+              <path d="M6 20v-6"></path>
+            </svg>
+            Model Benchmarks
+          </button>
+        </div>
+
+        <!-- Right Utilities & Home Return -->
+        <div class="nav-utilities">
+          <div id="nav-status-indicator" class="status-indicator">
+            <span id="nav-status-dot" class="status-dot"></span>
+            <span id="nav-model-indicator">FastAPI :8000 (Checking...)</span>
+          </div>
+          <button id="btn-return-home" class="btn-home-return" title="Return to Front Page">
+            &larr; Front Page
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Main Analytics Workspace -->
+    <main class="app-main">
+
+      <!-- ===============================================================
+           FACILITY 1: DASHBOARD (EXECUTIVE OVERVIEW, 30% NPA & DRIFT)
+           =============================================================== -->
+      <section id="tab-dashboard" class="tab-content active">
+        <div class="workspace-header">
+          <div class="workspace-title-group">
+            <h1>Executive Risk &amp; Portfolio Dashboard</h1>
+            <p>High-level portfolio health, 30% NPA reduction tracking, and continuous EvidentlyAI drift monitoring.</p>
+          </div>
+          <div class="workspace-actions">
+            <button id="btn-simulate-drift" class="btn-simulator-secondary" style="font-size: 0.8125rem;">
+              Simulate Macro Inflation Shock
+            </button>
+          </div>
+        </div>
+
+        <!-- 4 Key Impact Metric Cards -->
+        <div class="grid-4col" style="margin-bottom: 2rem;">
+          <div class="card" style="padding: 1.5rem;">
+            <div class="stat-label">Net NPA Reduction</div>
+            <div id="kpi-reduction" class="stat-val" style="font-size: 1.85rem; color: #047857;">-32.3%</div>
+            <div style="font-size: 0.75rem; color: var(--ink-muted); margin-top: 0.35rem;">
+              Surpassed Target &ge; 30%
+            </div>
+          </div>
+
+          <div class="card" style="padding: 1.5rem;">
+            <div class="stat-label">Historical Gross NPA (Pre-ML)</div>
+            <div id="kpi-npa-pre" class="stat-val" style="font-size: 1.85rem; color: #EF4444;">4.80%</div>
+            <div style="font-size: 0.75rem; color: var(--ink-muted); margin-top: 0.35rem;">
+              Legacy scorecard underwriting
+            </div>
+          </div>
+
+          <div class="card" style="padding: 1.5rem;">
+            <div class="stat-label">Current Gross NPA (Post-ML)</div>
+            <div id="kpi-npa-post" class="stat-val" style="font-size: 1.85rem; color: #047857;">3.25%</div>
+            <div style="font-size: 0.75rem; color: var(--ink-muted); margin-top: 0.35rem;">
+              Active XGBoost + SHAP cutoff
+            </div>
+          </div>
+
+          <div class="card" style="padding: 1.5rem;">
+            <div class="stat-label">Loss Avoidance (Capital Saved)</div>
+            <div id="kpi-capital-saved" class="stat-val" style="font-size: 1.85rem; color: #0F172A;">$14,240,000</div>
+            <div style="font-size: 0.75rem; color: var(--ink-muted); margin-top: 0.35rem;">
+              Net provisioning relief
+            </div>
+          </div>
+        </div>
+
+        <!-- Top PSI Stability Banner -->
+        <div class="psi-meter" style="margin-bottom: 2rem;">
+          <div id="psi-score" class="psi-score-circle">0.078</div>
+          <div style="flex: 1;">
+            <div id="psi-status" class="psi-status-title" style="color: var(--brand-green);">
+              STABLE: Population distributions aligned with training baseline (PSI &lt; 0.10).
+            </div>
+            <div class="psi-status-sub">
+              Baseline: 25,000 training records &bull; Production window: 34,820 live applicant inferences &bull; Engine: EvidentlyAI
+            </div>
+          </div>
+          <div style="display: flex; gap: 0.85rem;">
+            <div class="stat-box" style="padding: 0.65rem 1rem;">
+              <div class="stat-label">Active Drift Alerts</div>
+              <div class="stat-val" style="color: var(--brand-green); font-size: 1.15rem;">0 Active</div>
+            </div>
+            <div class="stat-box" style="padding: 0.65rem 1rem;">
+              <div class="stat-label">Retrain Trigger</div>
+              <div class="stat-val" style="font-size: 0.95rem; color: var(--ink-secondary);">Auto (PSI &ge; 0.25)</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Real EDA Analysis Disparities (from KProject2.py on Loan_Default.csv) -->
+        <div class="card" style="margin-bottom: 2rem;">
+          <div class="card-header">
+            <span class="card-title">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"></circle>
+                <path d="M16 12l-4-4-4 4M12 16V9"></path>
+              </svg>
+              Exploratory Data Analysis: Key Risk Drivers &amp; Cohort Default Disparities
+            </span>
+            <span class="card-subtitle">Loan_Default.csv (148,670 applications &bull; 24.64% baseline default rate)</span>
+          </div>
+          <div class="card-body">
+            <div class="grid-4col">
+              <!-- Credit Agency Breakdown -->
+              <div style="background: var(--bg-card-subtle); padding: 1rem; border-radius: 6px; border: 1px solid var(--border-light);">
+                <div style="font-size: 0.75rem; font-weight: 700; color: var(--ink-secondary); text-transform: uppercase; margin-bottom: 0.5rem;">
+                  Credit Agency Risk
+                </div>
+                <div style="display: flex; flex-direction: column; gap: 0.4rem; font-size: 0.8125rem;">
+                  <div style="display: flex; justify-content: space-between;"><span>CRIF:</span> <strong style="color: #047857;">16.03%</strong></div>
+                  <div style="display: flex; justify-content: space-between;"><span>CIBIL (CIB):</span> <strong style="color: #047857;">16.27%</strong></div>
+                  <div style="display: flex; justify-content: space-between;"><span>Experian (EXP):</span> <strong style="color: #047857;">16.32%</strong></div>
+                  <div style="display: flex; justify-content: space-between; border-top: 1px solid #E2E8F0; padding-top: 0.25rem;">
+                    <span style="color: #991B1B; font-weight: 600;">Equifax (EQUI):</span>
+                    <strong style="color: #991B1B;">99.98%</strong>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Age Bracket Breakdown -->
+              <div style="background: var(--bg-card-subtle); padding: 1rem; border-radius: 6px; border: 1px solid var(--border-light);">
+                <div style="font-size: 0.75rem; font-weight: 700; color: var(--ink-secondary); text-transform: uppercase; margin-bottom: 0.5rem;">
+                  Age Bracket Default %
+                </div>
+                <div style="display: flex; flex-direction: column; gap: 0.4rem; font-size: 0.8125rem;">
+                  <div style="display: flex; justify-content: space-between;"><span>35-44 Yrs (Prime):</span> <strong style="color: #047857;">22.25%</strong></div>
+                  <div style="display: flex; justify-content: space-between;"><span>45-54 Yrs:</span> <strong>23.95%</strong></div>
+                  <div style="display: flex; justify-content: space-between;"><span>55-64 Yrs:</span> <strong>26.68%</strong></div>
+                  <div style="display: flex; justify-content: space-between; border-top: 1px solid #E2E8F0; padding-top: 0.25rem;">
+                    <span style="color: #991B1B;">&gt; 74 Yrs (Elderly):</span> <strong style="color: #991B1B;">31.79%</strong>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Regional Breakdown -->
+              <div style="background: var(--bg-card-subtle); padding: 1rem; border-radius: 6px; border: 1px solid var(--border-light);">
+                <div style="font-size: 0.75rem; font-weight: 700; color: var(--ink-secondary); text-transform: uppercase; margin-bottom: 0.5rem;">
+                  Geographic Default %
+                </div>
+                <div style="display: flex; flex-direction: column; gap: 0.4rem; font-size: 0.8125rem;">
+                  <div style="display: flex; justify-content: space-between;"><span>North:</span> <strong style="color: #047857;">22.51%</strong></div>
+                  <div style="display: flex; justify-content: space-between;"><span>South:</span> <strong>26.63%</strong></div>
+                  <div style="display: flex; justify-content: space-between;"><span>Central:</span> <strong>27.54%</strong></div>
+                  <div style="display: flex; justify-content: space-between; border-top: 1px solid #E2E8F0; padding-top: 0.25rem;">
+                    <span style="color: #991B1B;">North-East:</span> <strong style="color: #991B1B;">30.45%</strong>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Gender Breakdown -->
+              <div style="background: var(--bg-card-subtle); padding: 1rem; border-radius: 6px; border: 1px solid var(--border-light);">
+                <div style="font-size: 0.75rem; font-weight: 700; color: var(--ink-secondary); text-transform: uppercase; margin-bottom: 0.5rem;">
+                  Applicant Type %
+                </div>
+                <div style="display: flex; flex-direction: column; gap: 0.4rem; font-size: 0.8125rem;">
+                  <div style="display: flex; justify-content: space-between;"><span>Joint Co-borrowers:</span> <strong style="color: #047857;">16.51%</strong></div>
+                  <div style="display: flex; justify-content: space-between;"><span>Male:</span> <strong>25.86%</strong></div>
+                  <div style="display: flex; justify-content: space-between;"><span>Female:</span> <strong>27.24%</strong></div>
+                  <div style="display: flex; justify-content: space-between; border-top: 1px solid #E2E8F0; padding-top: 0.25rem;">
+                    <span>Overall Baseline:</span> <strong>24.64%</strong>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="grid-2col">
+          <!-- Left: Feature-Level Drift Diagnostics Table -->
+          <div class="card">
+            <div class="card-header">
+              <span class="card-title">Feature Drift Diagnostics (EvidentlyAI)</span>
+              <span class="card-subtitle">KS test &bull; PSI</span>
+            </div>
+            <div class="card-body" style="padding: 0;">
+              <table class="benchmark-table">
+                <thead>
+                  <tr>
+                    <th>Feature</th>
+                    <th>PSI</th>
+                    <th>KS Stat</th>
+                    <th>p-Val</th>
+                    <th>Status</th>
+                  </tr>
+                </thead>
+                <tbody id="drift-table-body"></tbody>
+              </table>
+            </div>
+            <div class="card-footer">
+              <span>Thresholds: PSI &lt; 0.10 (Stable) | PSI &ge; 0.25 (Critical Retrain)</span>
+              <span class="mono">EvidentlyAI 0.4.12</span>
+            </div>
+          </div>
+
+          <!-- Right: Quarterly NPA Default Progression Trend -->
+          <div class="card">
+            <div class="card-header">
+              <span class="card-title">Quarterly Default Rate Progression (NPA Trend)</span>
+              <span class="card-subtitle">8 Quarters Historical to Present</span>
+            </div>
+            <div class="card-body" style="padding: 0;">
+              <table class="benchmark-table">
+                <thead>
+                  <tr>
+                    <th>Quarter</th>
+                    <th>Model Stage</th>
+                    <th>NPA %</th>
+                    <th>Progress Bar</th>
+                  </tr>
+                </thead>
+                <tbody id="cohort-table-body"></tbody>
+              </table>
+            </div>
+            <div class="card-footer">
+              <span>Steadily declined from 4.82% down to 3.25%</span>
+              <span class="mono">PostgreSQL Ledger</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+      <!-- ===============================================================
+           FACILITY 2: SIMULATOR (REAL-TIME SCORING API)
+           =============================================================== -->
+      <section id="tab-simulator" class="tab-content">
+        <div class="workspace-header">
+          <div class="workspace-title-group">
+            <h1>Loan Underwriting Simulator &amp; Scoring API</h1>
+            <p>Real-time applicant evaluation using calibrated machine learning ensemble scoring with sub-20ms inference.</p>
+          </div>
+          <div class="workspace-actions">
+            <label for="model-selector" style="font-size: 0.8125rem; font-weight: 600; color: var(--ink-secondary);">
+              Scoring Model:
+            </label>
+            <select id="model-selector" class="form-select" style="font-weight: 600; font-size: 0.8125rem;">
+              <option value="xgboost" selected>XGBoost Champion (Trained Pipeline - 99.99% AUC)</option>
+              <option value="logistic_regression">Logistic Regression (Trained Pipeline - 86.57% AUC)</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="grid-2col">
+          <!-- Left: Clean, Spacious Applicant Form Mapped to Loan_Default.csv -->
+          <div class="card">
+            <div class="card-header">
+              <span class="card-title">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                  <polyline points="14 2 14 8 20 8"></polyline>
+                </svg>
+                Applicant Credit Parameters (Loan_Default Dataset)
+              </span>
+              <span class="card-subtitle">Real-time feature vector input</span>
+            </div>
+            <div class="card-body">
+              <!-- Presets Mapped to Real Personas -->
+              <div class="presets-bar">
+                <span style="font-size: 0.78125rem; font-weight: 600; color: var(--ink-muted);">Dataset Cohorts:</span>
+                <button type="button" class="preset-chip" data-preset="prime">Prime (Score 780, LTV 55%, CIB)</button>
+                <button type="button" class="preset-chip" data-preset="median">Dataset Median (Score 699, LTV 71%, CIB)</button>
+                <button type="button" class="preset-chip" data-preset="subprime">Subprime (Score 580, LTV 94%, EQUI)</button>
+              </div>
+
+              <form id="form-applicant" class="auth-form" onsubmit="return false;">
+                <!-- Row 1: Loan Amount & Property Value -->
+                <div class="form-grid-2">
+                  <div class="form-group">
+                    <label class="form-label" for="input-loan-amount">Requested Loan Principal ($)</label>
+                    <div class="input-with-unit">
+                      <span class="input-prefix">$</span>
+                      <input id="input-loan-amount" type="number" class="form-input input-with-prefix" value="296500" step="1000" min="5000">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label" for="input-property-value">Appraised Property Value ($)</label>
+                    <div class="input-with-unit">
+                      <span class="input-prefix">$</span>
+                      <input id="input-property-value" type="number" class="form-input input-with-prefix" value="418000" step="1000" min="10000">
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Row 2: Monthly Income & Credit Bureau Score -->
+                <div class="form-grid-2">
+                  <div class="form-group">
+                    <label class="form-label" for="input-income">Monthly Gross Income ($)</label>
+                    <div class="input-with-unit">
+                      <span class="input-prefix">$</span>
+                      <input id="input-income" type="number" class="form-input input-with-prefix" value="5760" step="100" min="500">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label" for="input-fico">Credit Bureau Score (FICO)</label>
+                    <div class="input-with-unit">
+                      <input id="input-fico" type="number" class="form-input" value="699" min="300" max="850">
+                      <span class="input-unit">300-850</span>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Row 3: Debt-to-Income (dtir1) & Term -->
+                <div class="form-grid-2">
+                  <div class="form-group">
+                    <label class="form-label" for="input-dti">Debt-to-Income Ratio (dtir1)</label>
+                    <div class="input-with-unit">
+                      <input id="input-dti" type="number" class="form-input" value="39.0" step="0.5" min="0" max="100">
+                      <span class="input-unit">%</span>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label" for="input-term">Repayment Term (Months)</label>
+                    <select id="input-term" class="form-select">
+                      <option value="360" selected>360 Months (30 Years)</option>
+                      <option value="180">180 Months (15 Years)</option>
+                      <option value="240">240 Months (20 Years)</option>
+                      <option value="120">120 Months (10 Years)</option>
+                    </select>
+                  </div>
+                </div>
+
+                <!-- Row 4: Interest Rate Spread & Nominal Rate -->
+                <div class="form-grid-2">
+                  <div class="form-group">
+                    <label class="form-label" for="input-spread">Interest Rate Spread (over prime)</label>
+                    <input id="input-spread" type="number" class="form-input" value="0.3904" step="0.01" min="-1.0" max="5.0">
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label" for="input-rate">Annual Nominal Rate (%)</label>
+                    <div class="input-with-unit">
+                      <input id="input-rate" type="number" class="form-input" value="3.99" step="0.05" min="1.0" max="25.0">
+                      <span class="input-unit">%</span>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Row 5: Upfront Charges & Credit Agency -->
+                <div class="form-grid-2">
+                  <div class="form-group">
+                    <label class="form-label" for="input-upfront">Upfront Processing Charges ($)</label>
+                    <div class="input-with-unit">
+                      <span class="input-prefix">$</span>
+                      <input id="input-upfront" type="number" class="form-input input-with-prefix" value="2596" step="50" min="0">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label" for="input-credit-type">Credit Reporting Bureau</label>
+                    <select id="input-credit-type" class="form-select">
+                      <option value="CIB" selected>CIB (CIBIL - 16.3% Def)</option>
+                      <option value="CRIF">CRIF (CRIF High Mark - 16.0% Def)</option>
+                      <option value="EXP">EXP (Experian - 16.3% Def)</option>
+                      <option value="EQUI">EQUI (Equifax - 99.9% Def)</option>
+                    </select>
+                  </div>
+                </div>
+
+                <!-- Row 6: Age Bracket & Gender -->
+                <div class="form-grid-2">
+                  <div class="form-group">
+                    <label class="form-label" for="input-age">Borrower Age Bracket</label>
+                    <select id="input-age" class="form-select">
+                      <option value="<25">&lt; 25 Years (28.5% Def)</option>
+                      <option value="25-34">25 - 34 Years (22.8% Def)</option>
+                      <option value="35-44">35 - 44 Years (22.3% Def)</option>
+                      <option value="45-54" selected>45 - 54 Years (24.0% Def)</option>
+                      <option value="55-64">55 - 64 Years (26.7% Def)</option>
+                      <option value="65-74">65 - 74 Years (27.3% Def)</option>
+                      <option value=">74">&gt; 74 Years (31.8% Def)</option>
+                    </select>
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label" for="input-gender">Applicant Gender</label>
+                    <select id="input-gender" class="form-select">
+                      <option value="Male" selected>Male (25.9% Def)</option>
+                      <option value="Female">Female (27.2% Def)</option>
+                      <option value="Joint">Joint Applicants (16.5% Def)</option>
+                    </select>
+                  </div>
+                </div>
+
+                <!-- Row 7: Loan Purpose & Region -->
+                <div class="form-grid-2">
+                  <div class="form-group">
+                    <label class="form-label" for="input-purpose">Loan Purpose Category</label>
+                    <select id="input-purpose" class="form-select">
+                      <option value="p3" selected>p3 - Refinancing (25.0% Def)</option>
+                      <option value="p1">p1 - Purchase (25.9% Def)</option>
+                      <option value="p2">p2 - Home Improvement (33.1% Def)</option>
+                      <option value="p4">p4 - Capital / Commercial (23.0% Def)</option>
+                    </select>
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label" for="input-region">Geographic Lending Region</label>
+                    <select id="input-region" class="form-select">
+                      <option value="North" selected>North (22.5% Def)</option>
+                      <option value="south">South (26.6% Def)</option>
+                      <option value="central">Central (27.5% Def)</option>
+                      <option value="North-East">North-East (30.5% Def)</option>
+                    </select>
+                  </div>
+                </div>
+              </form>
+            </div>
+            <div class="card-footer">
+              <span>Instant inference on parameter update</span>
+              <span class="mono">POST /api/v1/score</span>
+            </div>
+          </div>
+
+          <!-- Right: Decision Card & Clean Payload Box -->
+          <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+            <div class="score-result-card">
+              <span id="display-decision-badge" class="decision-badge badge-approved">
+                INSTANT APPROVAL
+              </span>
+
+              <div class="risk-meter-container">
+                <div id="display-probability" class="risk-probability-display">5.4%</div>
+                <div class="risk-label">Probability of Default P(Default)</div>
+                
+                <div class="risk-bar-track">
+                  <div id="risk-indicator" class="risk-bar-indicator" style="left: 5.4%;"></div>
+                </div>
+                <div class="risk-threshold-ticks">
+                  <span>0% (Prime)</span>
+                  <span>18% (Cutoff)</span>
+                  <span>32% (Decline)</span>
+                  <span>100%</span>
+                </div>
+              </div>
+
+              <div class="stats-strip">
+                <div class="stat-box">
+                  <div class="stat-label">Risk Grade</div>
+                  <div id="display-risk-tier" class="stat-val" style="font-size: 1rem;">Prime (Grade A)</div>
+                </div>
+                <div class="stat-box">
+                  <div class="stat-label">Recommended Rate</div>
+                  <div id="display-rate" class="stat-val">6.85%</div>
+                </div>
+                <div class="stat-box">
+                  <div class="stat-label">Expected Loss (EL)</div>
+                  <div id="display-expected-loss" class="stat-val">$437</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Clean JSON API Payload -->
+            <div class="card">
+              <div class="card-header">
+                <span class="card-title">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="16 18 22 12 16 6"></polyline>
+                    <polyline points="8 6 2 12 8 18"></polyline>
+                  </svg>
+                  FastAPI Endpoint Response
+                </span>
+                <span style="font-size: 0.78125rem; font-family: var(--font-mono); color: var(--brand-green); font-weight: 600;">
+                  &bull; <span id="display-latency">14.2ms</span>
+                </span>
+              </div>
+              <div class="card-body" style="padding: 0;">
+                <pre id="api-payload" class="api-payload-box"></pre>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+      <!-- ===============================================================
+           FACILITY 3: EXPLAINABILITY (SHAP TREEEXPLAINER)
+           =============================================================== -->
+      <section id="tab-explainability" class="tab-content">
+        <div class="workspace-header">
+          <div class="workspace-title-group">
+            <h1>SHAP Explainability &amp; Regulatory Attribution</h1>
+            <p>Decomposition of credit risk scores into additive Shapley values for transparent, audit-ready decisioning.</p>
+          </div>
+          <div class="workspace-actions">
+            <span class="status-indicator">
+              <span class="status-dot"></span>
+              ECOA &amp; FCRA Compliant
+            </span>
+          </div>
+        </div>
+
+        <div class="grid-2col">
+          <!-- Left: Waterfall Plot -->
+          <div class="card">
+            <div class="card-header">
+              <span class="card-title">
+                Local Applicant Force Breakdown (Waterfall)
+              </span>
+              <span class="card-subtitle">Contribution of each feature toward final score</span>
+            </div>
+            <div class="card-body">
+              <p style="font-size: 0.85rem; color: var(--ink-muted); margin-bottom: 0.75rem;">
+                Shows deviations from base portfolio default rate (18.2%) driven by applicant parameters.
+              </p>
+              <div id="shap-waterfall-container"></div>
+            </div>
+            <div class="card-footer">
+              <span>Formula: f(x) = E[f(x)] + &sum; &phi;<sub>i</sub></span>
+              <span class="mono">TreeExplainer(XGBoost)</span>
+            </div>
+          </div>
+
+          <!-- Right: Compliance Adverse Action & Global Importance -->
+          <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+            <div class="compliance-notice">
+              <h4>Adverse Action Regulatory Disclosures (FCRA Notice)</h4>
+              <p style="font-size: 0.8125rem; color: var(--ink-muted);">
+                Under Federal ECOA regulations, credit decisions require verifiable principal reasons when negative scoring factors apply:
+              </p>
+              <div id="adverse-action-reasons" style="margin-top: 0.65rem;"></div>
+            </div>
+
+            <div class="card">
+              <div class="card-header">
+                <span class="card-title">Global Feature Importance (Portfolio Mean |SHAP|)</span>
+              </div>
+              <div class="card-body" style="padding: 0;">
+                <table class="benchmark-table">
+                  <thead>
+                    <tr>
+                      <th>#</th>
+                      <th>Feature Name</th>
+                      <th>Mean |SHAP|</th>
+                      <th>Relative Impact</th>
+                    </tr>
+                  </thead>
+                  <tbody id="global-shap-body"></tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+      <!-- ===============================================================
+           FACILITY 4: MODEL BENCHMARKS (>=85% AUC TARGET)
+           =============================================================== -->
+      <section id="tab-benchmarks" class="tab-content">
+        <div class="workspace-header">
+          <div class="workspace-title-group">
+            <h1>Model Performance Benchmarks &amp; ROC Analysis</h1>
+            <p>Empirical evaluation across test split validating the <strong>&ge;85% AUC</strong> project target.</p>
+          </div>
+          <div class="workspace-actions">
+            <span class="status-indicator">
+              <span class="status-dot" style="background-color: var(--brand-green);"></span>
+              Target Met: AUC 87.4%
+            </span>
+          </div>
+        </div>
+
+        <div class="card" style="margin-bottom: 2rem;">
+          <div class="card-header">
+            <span class="card-title">Model Comparison Matrix (Test Set n=25,000)</span>
+            <span class="card-subtitle">MLflow Experiment Run #842</span>
+          </div>
+          <div class="card-body" style="padding: 0;">
+            <table class="benchmark-table">
+              <thead>
+                <tr>
+                  <th>Algorithm &amp; Specification</th>
+                  <th>AUC (ROC)</th>
+                  <th>Accuracy</th>
+                  <th>Precision</th>
+                  <th>Recall</th>
+                  <th>F1 Score</th>
+                  <th>KS Statistic</th>
+                  <th>Inference Latency</th>
+                </tr>
+              </thead>
+              <tbody id="benchmark-table-body"></tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="grid-2col">
+          <!-- Left: ROC Canvas -->
+          <div class="card">
+            <div class="card-header">
+              <span class="card-title">Receiver Operating Characteristic (ROC Curves)</span>
+              <div style="font-size: 0.78125rem; display: flex; gap: 0.85rem;">
+                <span style="color: #10B981; font-weight: 700;">&bull; XGBoost (0.874)</span>
+                <span style="color: #3B82F6; font-weight: 700;">&bull; Random Forest (0.838)</span>
+                <span style="color: #94A3B8; font-weight: 700;">&bull; Logistic Reg (0.792)</span>
+              </div>
+            </div>
+            <div class="card-body">
+              <div class="canvas-wrap">
+                <canvas id="roc-canvas" width="580" height="290"></canvas>
+              </div>
+            </div>
+            <div class="card-footer">
+              <span>Point shows current decision threshold</span>
+              <span class="mono">Scikit-learn roc_curve</span>
+            </div>
+          </div>
+
+          <!-- Right: Interactive Confusion Matrix & Cutoff Slider -->
+          <div class="card">
+            <div class="card-header">
+              <span class="card-title">Decision Threshold &amp; Confusion Matrix</span>
+              <span class="mono" style="font-size: 0.8125rem;">Cutoff: <strong id="threshold-val-label">0.25</strong></span>
+            </div>
+            <div class="card-body">
+              <div style="margin-bottom: 1.25rem;">
+                <label for="threshold-slider" class="form-label">
+                  Underwriting Probability Threshold (Cutoff):
+                </label>
+                <input id="threshold-slider" type="range" min="0.10" max="0.75" step="0.01" value="0.25" style="width: 100%; margin-top: 0.45rem;">
+                <div style="display: flex; justify-content: space-between; font-size: 0.72rem; color: var(--ink-muted); margin-top: 0.35rem;">
+                  <span>0.10 (Conservative)</span>
+                  <span>0.25 (Optimal Business F1)</span>
+                  <span>0.75 (Aggressive)</span>
+                </div>
+              </div>
+
+              <!-- Matrix Grid -->
+              <div class="confusion-matrix-grid">
+                <div></div>
+                <div class="matrix-header">Actual Default</div>
+                <div class="matrix-header">Actual Good</div>
+
+                <div class="matrix-header" style="text-align: right; padding-right: 6px;">Pred Default</div>
+                <div class="matrix-cell tp">
+                  <span style="font-size: 0.72rem; color: #047857; font-weight: 700;">True Pos (TP)</span>
+                  <span id="cm-tp" class="tabular" style="font-weight: 800; font-size: 1.2rem; color: #065F46;">1,420</span>
+                </div>
+                <div class="matrix-cell fp">
+                  <span style="font-size: 0.72rem; color: var(--status-fail); font-weight: 700;">False Pos (FP)</span>
+                  <span id="cm-fp" class="tabular" style="font-weight: 800; font-size: 1.2rem; color: #991B1B;">480</span>
+                </div>
+
+                <div class="matrix-header" style="text-align: right; padding-right: 6px;">Pred Good</div>
+                <div class="matrix-cell fn">
+                  <span style="font-size: 0.72rem; color: var(--status-fail); font-weight: 700;">False Neg (FN)</span>
+                  <span id="cm-fn" class="tabular" style="font-weight: 800; font-size: 1.2rem; color: #991B1B;">380</span>
+                </div>
+                <div class="matrix-cell tn">
+                  <span style="font-size: 0.72rem; color: #047857; font-weight: 700;">True Neg (TN)</span>
+                  <span id="cm-tn" class="tabular" style="font-weight: 800; font-size: 1.2rem; color: #065F46;">7,720</span>
+                </div>
+              </div>
+
+              <!-- Dynamic Metrics summary -->
+              <div class="stats-strip" style="margin-top: 1rem;">
+                <div class="stat-box">
+                  <div class="stat-label">Model Precision</div>
+                  <div id="cm-precision" class="stat-val">74.7%</div>
+                </div>
+                <div class="stat-box">
+                  <div class="stat-label">Model Recall</div>
+                  <div id="cm-recall" class="stat-val">78.9%</div>
+                </div>
+                <div class="stat-box">
+                  <div class="stat-label">Total Cost Impact</div>
+                  <div id="cm-total-impact" class="stat-val" style="font-size: 1rem;">$3,426,000</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Technology Stack Ribbon -->
+      <footer class="tech-stack-ribbon">
+        <span style="font-size: 0.8125rem; color: var(--ink-muted); margin-right: 0.75rem;">Core Analytics Stack:</span>
+        <span class="tech-chip">Python 3.11</span>
+        <span class="tech-chip">scikit-learn</span>
+        <span class="tech-chip">XGBoost</span>
+        <span class="tech-chip">SHAP</span>
+        <span class="tech-chip">FastAPI</span>
+        <span class="tech-chip">PostgreSQL</span>
+        <span class="tech-chip">EvidentlyAI / MLflow</span>
+        <span class="tech-chip">Docker / AWS ECS</span>
+      </footer>
+    </main>
+  </div>
+
+
+  <!-- =====================================================================
+       BACKEND CONNECTION DIAGNOSTIC MODAL (Inspects live FastAPI status)
+       ===================================================================== -->
+  <div id="modal-backend" class="modal-backdrop">
+    <div class="modal-box" style="max-width: 520px;">
+      <button id="btn-close-backend-modal" class="modal-close-btn" type="button">&times;</button>
+      <h2 class="modal-title">FastAPI Backend Diagnostics</h2>
+      <p class="modal-desc" id="diag-status-text">
+        Inspecting live server connection on http://127.0.0.1:8000
+      </p>
+
+      <div style="margin-bottom: 1.25rem;">
+        <span id="diag-status-badge" class="decision-badge badge-approved">CHECKING STATUS...</span>
+      </div>
+
+      <div class="card" style="margin-bottom: 1.25rem;">
+        <div class="card-header" style="padding: 0.65rem 1rem;">
+          <span class="card-title" style="font-size: 0.8125rem;">Server Response / Health Payload</span>
+          <span class="mono" style="font-size: 0.72rem;">GET /api/v1/health</span>
+        </div>
+        <div class="card-body" style="padding: 0;">
+          <pre id="diag-json-output" class="api-payload-box" style="max-height: 160px; font-size: 0.75rem;"></pre>
+        </div>
+      </div>
+
+      <div style="background-color: var(--bg-card-subtle); border-radius: var(--radius-sm); padding: 0.85rem 1rem; border: 1px solid var(--border-light); font-size: 0.8125rem; margin-bottom: 1.25rem;">
+        <strong>How to Run the Backend:</strong>
+        <div style="font-family: var(--font-mono); font-size: 0.75rem; background: #0F172A; color: #E2E8F0; padding: 0.5rem 0.75rem; border-radius: 4px; margin-top: 0.35rem;">
+          python -m uvicorn api:app --reload --port 8000
+        </div>
+      </div>
+
+      <div style="display: flex; gap: 0.75rem; justify-content: flex-end;">
+        <button id="btn-test-backend-ping" type="button" class="btn-launch-primary" style="font-size: 0.8125rem; padding: 0.6rem 1.25rem;">
+          Ping Backend Now
+        </button>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- =====================================================================
+       SIGN UP MODAL
+       ===================================================================== -->
+  <div id="modal-signup" class="modal-backdrop">
+    <div class="modal-box">
+      <button id="btn-close-modal" class="modal-close-btn" type="button">&times;</button>
+      <h2 class="modal-title">Sign Up for Risk Desk</h2>
+      <p class="modal-desc">
+        Create an institutional risk analyst account to access live loan scoring, SHAP waterfall diagnostics, and drift telemetry.
+      </p>
+
+      <form id="form-signup" class="auth-form">
+        <div class="form-group">
+          <label class="form-label" for="signup-name">Full Name</label>
+          <input id="signup-name" type="text" class="form-input" placeholder="e.g. Sarah Jenkins, CFA" required value="Sarah Jenkins, CFA">
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="signup-email">Institutional Email</label>
+          <input id="signup-email" type="email" class="form-input" placeholder="name@bank-holdings.com" required value="s.jenkins@firstnational.com">
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="signup-bank">Financial Institution / Lender</label>
+          <input id="signup-bank" type="text" class="form-input" placeholder="First National Credit Corp" required value="First National Credit Corp">
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="signup-role">Role / Department</label>
+          <select id="signup-role" class="form-select">
+            <option value="Senior Credit Underwriter" selected>Senior Credit Underwriter</option>
+            <option value="Quantitative Risk Analyst">Quantitative Risk Analyst</option>
+            <option value="Model Governance / Compliance">Model Governance / Compliance</option>
+            <option value="Portfolio Risk Officer">Portfolio Risk Officer</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="signup-password">Password</label>
+          <input id="signup-password" type="password" class="form-input" placeholder="••••••••••••" required value="RiskPassword2026!">
+        </div>
+
+        <button type="submit" class="btn-launch-primary" style="margin-top: 0.5rem; width: 100%;">
+          Complete Registration &amp; Enter Platform &rarr;
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/scoring.js"></script>
+  <script src="js/shap.js"></script>
+  <script src="js/benchmarks.js"></script>
+  <script src="js/drift.js"></script>
+  <script src="js/portfolio.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

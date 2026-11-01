@@ -1,0 +1,614 @@
+{
+  "dataset_summary": {
+    "total_records": 148670,
+    "default_count": 36639,
+    "non_default_count": 112031,
+    "default_rate_pct": 24.64,
+    "features_count": 31,
+    "test_size": 29734
+  },
+  "model_benchmarks": [
+    {
+      "name": "Logistic Regression",
+      "role": "BASELINE",
+      "accuracy": 0.8746,
+      "precision": 0.9322,
+      "recall": 0.5295,
+      "f1": 0.6754,
+      "auc": 0.8657
+    },
+    {
+      "name": "Decision Tree",
+      "role": "BENCHMARK",
+      "accuracy": 1.0,
+      "precision": 0.9999,
+      "recall": 1.0,
+      "f1": 0.9999,
+      "auc": 1.0
+    },
+    {
+      "name": "Random Forest",
+      "role": "CHALLENGER",
+      "accuracy": 1.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "auc": 1.0
+    },
+    {
+      "name": "XGBoost",
+      "role": "CHAMPION",
+      "accuracy": 0.9999,
+      "precision": 0.9997,
+      "recall": 1.0,
+      "f1": 0.9999,
+      "auc": 1.0
+    }
+  ],
+  "top_features": [
+    {
+      "feature": "Interest_rate_spread",
+      "importance": 0.688
+    },
+    {
+      "feature": "credit_type_EQUI",
+      "importance": 0.3087
+    },
+    {
+      "feature": "Upfront_charges",
+      "importance": 0.002
+    },
+    {
+      "feature": "rate_of_interest",
+      "importance": 0.0005
+    },
+    {
+      "feature": "loan_limit_cf",
+      "importance": 0.0004
+    },
+    {
+      "feature": "Neg_ammortization_neg_amm",
+      "importance": 0.0001
+    },
+    {
+      "feature": "loan_type_type1",
+      "importance": 0.0001
+    },
+    {
+      "feature": "LTV",
+      "importance": 0.0001
+    },
+    {
+      "feature": "loan_amount",
+      "importance": 0.0001
+    },
+    {
+      "feature": "property_value",
+      "importance": 0.0001
+    },
+    {
+      "feature": "dtir1",
+      "importance": 0.0
+    },
+    {
+      "feature": "Credit_Score",
+      "importance": 0.0
+    },
+    {
+      "feature": "loan_limit_ncf",
+      "importance": 0.0
+    },
+    {
+      "feature": "Gender_Female",
+      "importance": 0.0
+    },
+    {
+      "feature": "Gender_Male",
+      "importance": 0.0
+    }
+  ],
+  "roc_curves": {
+    "logistic_regression": [
+      {
+        "fpr": 0.0,
+        "tpr": 0.0
+      },
+      {
+        "fpr": 0.007,
+        "tpr": 0.501
+      },
+      {
+        "fpr": 0.015,
+        "tpr": 0.54
+      },
+      {
+        "fpr": 0.026,
+        "tpr": 0.568
+      },
+      {
+        "fpr": 0.037,
+        "tpr": 0.596
+      },
+      {
+        "fpr": 0.051,
+        "tpr": 0.619
+      },
+      {
+        "fpr": 0.066,
+        "tpr": 0.643
+      },
+      {
+        "fpr": 0.081,
+        "tpr": 0.666
+      },
+      {
+        "fpr": 0.098,
+        "tpr": 0.691
+      },
+      {
+        "fpr": 0.117,
+        "tpr": 0.714
+      },
+      {
+        "fpr": 0.139,
+        "tpr": 0.736
+      },
+      {
+        "fpr": 0.163,
+        "tpr": 0.756
+      },
+      {
+        "fpr": 0.19,
+        "tpr": 0.777
+      },
+      {
+        "fpr": 0.216,
+        "tpr": 0.795
+      },
+      {
+        "fpr": 0.245,
+        "tpr": 0.814
+      },
+      {
+        "fpr": 0.28,
+        "tpr": 0.833
+      },
+      {
+        "fpr": 0.318,
+        "tpr": 0.85
+      },
+      {
+        "fpr": 0.365,
+        "tpr": 0.868
+      },
+      {
+        "fpr": 0.442,
+        "tpr": 0.885
+      },
+      {
+        "fpr": 0.517,
+        "tpr": 0.901
+      },
+      {
+        "fpr": 0.599,
+        "tpr": 0.918
+      },
+      {
+        "fpr": 0.682,
+        "tpr": 0.934
+      },
+      {
+        "fpr": 0.766,
+        "tpr": 0.951
+      },
+      {
+        "fpr": 0.841,
+        "tpr": 0.967
+      },
+      {
+        "fpr": 0.915,
+        "tpr": 0.983
+      },
+      {
+        "fpr": 0.988,
+        "tpr": 0.999
+      },
+      {
+        "fpr": 1.0,
+        "tpr": 1.0
+      }
+    ],
+    "decision_tree": [
+      {
+        "fpr": 0.0,
+        "tpr": 0.0
+      },
+      {
+        "fpr": 0.0,
+        "tpr": 1.0
+      },
+      {
+        "fpr": 1.0,
+        "tpr": 1.0
+      }
+    ],
+    "random_forest": [
+      {
+        "fpr": 0.0,
+        "tpr": 0.0
+      },
+      {
+        "fpr": 0.0,
+        "tpr": 0.101
+      },
+      {
+        "fpr": 0.0,
+        "tpr": 0.178
+      },
+      {
+        "fpr": 0.0,
+        "tpr": 0.288
+      },
+      {
+        "fpr": 0.0,
+        "tpr": 0.389
+      },
+      {
+        "fpr": 0.127,
+        "tpr": 1.0
+      },
+      {
+        "fpr": 0.196,
+        "tpr": 1.0
+      },
+      {
+        "fpr": 0.248,
+        "tpr": 1.0
+      },
+      {
+        "fpr": 0.284,
+        "tpr": 1.0
+      },
+      {
+        "fpr": 0.323,
+        "tpr": 1.0
+      },
+      {
+        "fpr": 0.357,
+        "tpr": 1.0
+      },
+      {
+        "fpr": 0.388,
+        "tpr": 1.0
+      },
+      {
+        "fpr": 0.419,
+        "tpr": 1.0
+      },
+      {
+        "fpr": 0.446,
+        "tpr": 1.0
+      },
+      {
+        "fpr": 0.477,
+        "tpr": 1.0
+      },
+      {
+        "fpr": 0.514,
+        "tpr": 1.0
+      },
+      {
+        "fpr": 0.542,
+        "tpr": 1.0
+      },
+      {
+        "fpr": 0.567,
+        "tpr": 1.0
+      },
+      {
+        "fpr": 0.6,
+        "tpr": 1.0
+      },
+      {
+        "fpr": 0.631,
+        "tpr": 1.0
+      },
+      {
+        "fpr": 0.661,
+        "tpr": 1.0
+      },
+      {
+        "fpr": 0.695,
+        "tpr": 1.0
+      },
+      {
+        "fpr": 0.729,
+        "tpr": 1.0
+      },
+      {
+        "fpr": 0.771,
+        "tpr": 1.0
+      },
+      {
+        "fpr": 0.819,
+        "tpr": 1.0
+      },
+      {
+        "fpr": 0.962,
+        "tpr": 1.0
+      },
+      {
+        "fpr": 1.0,
+        "tpr": 1.0
+      }
+    ],
+    "xgboost": [
+      {
+        "fpr": 0.0,
+        "tpr": 0.0
+      },
+      {
+        "fpr": 0.0,
+        "tpr": 0.422
+      },
+      {
+        "fpr": 0.0,
+        "tpr": 0.969
+      },
+      {
+        "fpr": 0.0,
+        "tpr": 0.994
+      },
+      {
+        "fpr": 0.0,
+        "tpr": 0.994
+      },
+      {
+        "fpr": 0.0,
+        "tpr": 0.995
+      },
+      {
+        "fpr": 0.0,
+        "tpr": 0.995
+      },
+      {
+        "fpr": 0.0,
+        "tpr": 0.996
+      },
+      {
+        "fpr": 0.0,
+        "tpr": 0.996
+      },
+      {
+        "fpr": 0.0,
+        "tpr": 0.996
+      },
+      {
+        "fpr": 0.0,
+        "tpr": 0.997
+      },
+      {
+        "fpr": 0.0,
+        "tpr": 0.998
+      },
+      {
+        "fpr": 0.0,
+        "tpr": 0.998
+      },
+      {
+        "fpr": 0.0,
+        "tpr": 0.998
+      },
+      {
+        "fpr": 0.0,
+        "tpr": 0.999
+      },
+      {
+        "fpr": 0.0,
+        "tpr": 0.999
+      },
+      {
+        "fpr": 0.0,
+        "tpr": 1.0
+      },
+      {
+        "fpr": 0.0,
+        "tpr": 1.0
+      },
+      {
+        "fpr": 0.0,
+        "tpr": 1.0
+      },
+      {
+        "fpr": 0.0,
+        "tpr": 1.0
+      },
+      {
+        "fpr": 0.001,
+        "tpr": 1.0
+      },
+      {
+        "fpr": 0.001,
+        "tpr": 1.0
+      },
+      {
+        "fpr": 0.001,
+        "tpr": 1.0
+      },
+      {
+        "fpr": 0.001,
+        "tpr": 1.0
+      },
+      {
+        "fpr": 0.002,
+        "tpr": 1.0
+      },
+      {
+        "fpr": 0.002,
+        "tpr": 1.0
+      },
+      {
+        "fpr": 0.004,
+        "tpr": 1.0
+      },
+      {
+        "fpr": 0.005,
+        "tpr": 1.0
+      },
+      {
+        "fpr": 0.026,
+        "tpr": 1.0
+      },
+      {
+        "fpr": 0.05,
+        "tpr": 1.0
+      },
+      {
+        "fpr": 0.073,
+        "tpr": 1.0
+      },
+      {
+        "fpr": 0.08,
+        "tpr": 1.0
+      },
+      {
+        "fpr": 0.083,
+        "tpr": 1.0
+      },
+      {
+        "fpr": 0.138,
+        "tpr": 1.0
+      },
+      {
+        "fpr": 0.14,
+        "tpr": 1.0
+      },
+      {
+        "fpr": 0.149,
+        "tpr": 1.0
+      },
+      {
+        "fpr": 0.149,
+        "tpr": 1.0
+      },
+      {
+        "fpr": 0.15,
+        "tpr": 1.0
+      },
+      {
+        "fpr": 0.153,
+        "tpr": 1.0
+      },
+      {
+        "fpr": 0.301,
+        "tpr": 1.0
+      },
+      {
+        "fpr": 0.463,
+        "tpr": 1.0
+      },
+      {
+        "fpr": 0.528,
+        "tpr": 1.0
+      },
+      {
+        "fpr": 0.571,
+        "tpr": 1.0
+      },
+      {
+        "fpr": 0.616,
+        "tpr": 1.0
+      },
+      {
+        "fpr": 0.704,
+        "tpr": 1.0
+      },
+      {
+        "fpr": 0.85,
+        "tpr": 1.0
+      },
+      {
+        "fpr": 1.0,
+        "tpr": 1.0
+      }
+    ]
+  },
+  "eda_crosstabs": {
+    "gender": {
+      "Female": 25.12,
+      "Joint": 19.16,
+      "Male": 26.19,
+      "Missing": 28.59
+    },
+    "age": {
+      "25-34": 22.19,
+      "35-44": 22.27,
+      "45-54": 24.05,
+      "55-64": 25.89,
+      "65-74": 26.86,
+      "<25": 28.95,
+      ">74": 30.01,
+      "Missing": 100.0
+    },
+    "credit_type": {
+      "CIB": 15.8,
+      "CRIF": 16.23,
+      "EQUI": 99.99,
+      "EXP": 15.99
+    },
+    "loan_purpose": {
+      "Missing": 26.12,
+      "p1": 25.88,
+      "p2": 33.08,
+      "p3": 25.02,
+      "p4": 22.97
+    },
+    "region": {
+      "North": 22.51,
+      "North-East": 30.45,
+      "central": 27.54,
+      "south": 26.63
+    }
+  },
+  "feature_medians": {
+    "loan_amount": 296500.0,
+    "rate_of_interest": 3.99,
+    "Interest_rate_spread": 0.3904,
+    "Upfront_charges": 2596.45,
+    "term": 360.0,
+    "property_value": 418000.0,
+    "income": 5760.0,
+    "Credit_Score": 699.0,
+    "LTV": 75.13586957,
+    "dtir1": 39.0
+  },
+  "feature_modes": {
+    "loan_limit": "cf",
+    "Gender": "Male",
+    "approv_in_adv": "nopre",
+    "loan_type": "type1",
+    "loan_purpose": "p3",
+    "Credit_Worthiness": "l1",
+    "open_credit": "nopc",
+    "business_or_commercial": "nob/c",
+    "Neg_ammortization": "not_neg",
+    "interest_only": "not_int",
+    "lump_sum_payment": "not_lpsm",
+    "construction_type": "sb",
+    "occupancy_type": "pr",
+    "Secured_by": "home",
+    "total_units": "1U",
+    "credit_type": "CIB",
+    "co-applicant_credit_type": "CIB",
+    "age": "45-54",
+    "submission_of_application": "to_inst",
+    "Region": "North",
+    "Security_Type": "direct"
+  },
+  "confusion_matrix_xgb": {
+    "tp": 7328,
+    "fn": 0,
+    "fp": 2,
+    "tn": 22404
+  }
+}

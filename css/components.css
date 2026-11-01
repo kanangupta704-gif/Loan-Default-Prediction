@@ -1,0 +1,573 @@
+/* ==========================================================================
+   Component-Specific Stylesheet (Sober, Spacious, Non-Congested)
+   ========================================================================== */
+
+/* Layout Grids */
+.grid-2col {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 2rem;
+}
+
+.grid-3col {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.75rem;
+}
+
+.grid-4col {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+
+@media (max-width: 1024px) {
+  .grid-2col {
+    grid-template-columns: 1fr;
+    gap: 1.75rem;
+  }
+  .grid-3col {
+    grid-template-columns: 1fr;
+  }
+  .grid-4col {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Card Containers - Spacious & Crisp */
+.card {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-subtle);
+  overflow: hidden;
+}
+
+.card-header {
+  padding: 1.25rem 1.75rem;
+  border-bottom: 1px solid var(--border-light);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #FFFFFF;
+}
+
+.card-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--ink-primary);
+  letter-spacing: -0.01em;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.card-subtitle {
+  font-size: 0.8125rem;
+  color: var(--ink-muted);
+}
+
+.card-body {
+  padding: 1.75rem;
+}
+
+.card-footer {
+  padding: 1rem 1.75rem;
+  border-top: 1px solid var(--border-light);
+  background-color: var(--bg-card-subtle);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.78125rem;
+  color: var(--ink-muted);
+}
+
+/* Form Styles for Scoring API - Spacious & Comfortable */
+.form-grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+}
+
+.input-with-unit {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.input-unit {
+  position: absolute;
+  right: 0.85rem;
+  font-size: 0.78125rem;
+  font-family: var(--font-mono);
+  color: var(--ink-muted);
+  pointer-events: none;
+}
+
+.input-prefix {
+  position: absolute;
+  left: 0.85rem;
+  font-size: 0.85rem;
+  font-family: var(--font-mono);
+  color: var(--ink-muted);
+  pointer-events: none;
+}
+
+.input-with-prefix {
+  padding-left: 1.75rem !important;
+}
+
+/* Presets Bar */
+.presets-bar {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1.15rem;
+  border-bottom: 1px solid var(--border-light);
+  flex-wrap: wrap;
+}
+
+.preset-chip {
+  font-size: 0.78125rem;
+  font-weight: 600;
+  padding: 0.4rem 0.85rem;
+  background-color: var(--bg-card-subtle);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-sm);
+  color: var(--ink-secondary);
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.preset-chip:hover {
+  background-color: #ECFDF5;
+  border-color: var(--brand-green-border);
+  color: var(--brand-green-dark);
+}
+
+/* Result Scoring Box */
+.score-result-card {
+  background-color: #FFFFFF;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  padding: 2rem;
+  text-align: center;
+  box-shadow: var(--shadow-subtle);
+}
+
+.decision-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  padding: 0.45rem 1.15rem;
+  border-radius: var(--radius-full);
+}
+
+.badge-approved {
+  background-color: #ECFDF5;
+  color: #047857;
+  border: 1px solid var(--brand-green-border);
+}
+
+.badge-review {
+  background-color: var(--status-warn-bg);
+  color: var(--status-warn);
+  border: 1px solid var(--status-warn-border);
+}
+
+.badge-rejected {
+  background-color: var(--status-fail-bg);
+  color: var(--status-fail);
+  border: 1px solid var(--status-fail-border);
+}
+
+/* Default Risk Gauge Meter */
+.risk-meter-container {
+  margin: 1.5rem 0;
+  position: relative;
+}
+
+.risk-probability-display {
+  font-size: 2.75rem;
+  font-weight: 800;
+  font-family: var(--font-mono);
+  color: var(--ink-primary);
+  line-height: 1;
+}
+
+.risk-label {
+  font-size: 0.78125rem;
+  font-weight: 600;
+  color: var(--ink-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-top: 0.4rem;
+}
+
+.risk-bar-track {
+  height: 10px;
+  background: linear-gradient(to right, #10B981 0%, #F59E0B 30%, #EF4444 65%, #991B1B 100%);
+  border-radius: var(--radius-full);
+  margin-top: 1.25rem;
+  position: relative;
+}
+
+.risk-bar-indicator {
+  position: absolute;
+  top: -5px;
+  width: 20px;
+  height: 20px;
+  background-color: #0F172A;
+  border: 3px solid #FFFFFF;
+  border-radius: 50%;
+  transform: translateX(-50%);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+  transition: left 0.3s ease;
+}
+
+.risk-threshold-ticks {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.72rem;
+  font-family: var(--font-mono);
+  color: var(--ink-muted);
+  margin-top: 0.5rem;
+}
+
+/* Metric Stats Row */
+.stats-strip {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-top: 1.5rem;
+  text-align: left;
+}
+
+.stat-box {
+  background-color: var(--bg-card-subtle);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-sm);
+  padding: 0.85rem 1rem;
+}
+
+.stat-label {
+  font-size: 0.72rem;
+  color: var(--ink-muted);
+  font-weight: 600;
+}
+
+.stat-val {
+  font-size: 1.25rem;
+  font-weight: 700;
+  font-family: var(--font-mono);
+  color: var(--ink-primary);
+  margin-top: 0.2rem;
+}
+
+/* API Raw Payload Viewer */
+.api-payload-box {
+  background-color: #0F172A;
+  color: #E2E8F0;
+  border-radius: var(--radius-sm);
+  padding: 1rem 1.25rem;
+  font-family: var(--font-mono);
+  font-size: 0.78125rem;
+  line-height: 1.55;
+  overflow-x: auto;
+  max-height: 200px;
+}
+
+/* ==========================================================================
+   SHAP WATERFALL PLOT COMPONENT
+   ========================================================================== */
+
+.shap-legend {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  font-size: 0.8125rem;
+  margin-bottom: 1.25rem;
+  font-weight: 500;
+}
+
+.shap-legend-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.legend-square {
+  width: 12px;
+  height: 12px;
+  border-radius: 2px;
+}
+
+.waterfall-chart-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  margin: 1.25rem 0;
+}
+
+.waterfall-row {
+  display: grid;
+  grid-template-columns: 200px 1fr 100px;
+  align-items: center;
+  gap: 1rem;
+  font-size: 0.85rem;
+}
+
+.waterfall-label {
+  color: var(--ink-secondary);
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.waterfall-bar-track {
+  position: relative;
+  height: 26px;
+  background-color: var(--bg-card-subtle);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+
+.waterfall-center-line {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background-color: var(--border-medium);
+  z-index: 2;
+}
+
+.waterfall-bar {
+  position: absolute;
+  height: 100%;
+  border-radius: 2px;
+  transition: width 0.3s ease;
+}
+
+.waterfall-bar.push-risk {
+  background-color: #EF4444;
+  left: 50%;
+}
+
+.waterfall-bar.reduce-risk {
+  background-color: var(--brand-green);
+  right: 50%;
+}
+
+.waterfall-val {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-align: right;
+}
+
+.val-danger {
+  color: var(--status-fail);
+}
+
+.val-safe {
+  color: #047857;
+}
+
+/* Adverse Action Notice Card */
+.compliance-notice {
+  background-color: #F8FAFC;
+  border-left: 4px solid var(--brand-green);
+  border-top: 1px solid var(--border-light);
+  border-right: 1px solid var(--border-light);
+  border-bottom: 1px solid var(--border-light);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  padding: 1.35rem;
+  font-size: 0.85rem;
+}
+
+.compliance-notice h4 {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--ink-primary);
+  margin-bottom: 0.45rem;
+}
+
+.compliance-list {
+  padding-left: 1.35rem;
+  margin-top: 0.65rem;
+  color: var(--ink-secondary);
+}
+
+.compliance-list li {
+  margin-bottom: 0.45rem;
+}
+
+/* ==========================================================================
+   MODEL BENCHMARKS TABLE & ROC CANVAS
+   ========================================================================== */
+
+.benchmark-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 0.85rem;
+}
+
+.benchmark-table th {
+  background-color: var(--bg-card-subtle);
+  color: var(--ink-secondary);
+  font-weight: 700;
+  padding: 0.9rem 1.25rem;
+  border-bottom: 1px solid var(--border-light);
+  font-size: 0.78125rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.benchmark-table td {
+  padding: 1rem 1.25rem;
+  border-bottom: 1px solid var(--border-light);
+  color: var(--ink-primary);
+}
+
+.benchmark-table tr.champion-row {
+  background-color: #ECFDF5;
+}
+
+.champion-tag {
+  background-color: #D1FAE5;
+  color: #065F46;
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 0.2rem 0.55rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid #6EE7B7;
+  margin-left: 0.5rem;
+}
+
+/* ROC Canvas Plot */
+.canvas-wrap {
+  width: 100%;
+  height: 290px;
+  position: relative;
+}
+
+canvas {
+  width: 100% !important;
+  height: 100% !important;
+  display: block;
+}
+
+/* Confusion Matrix */
+.confusion-matrix-grid {
+  display: grid;
+  grid-template-columns: 85px 1fr 1fr;
+  grid-template-rows: 36px 1fr 1fr;
+  gap: 6px;
+  font-size: 0.8rem;
+  margin: 1.25rem 0;
+  text-align: center;
+}
+
+.matrix-cell {
+  background-color: var(--bg-card-subtle);
+  border: 1px solid var(--border-light);
+  padding: 0.85rem;
+  border-radius: var(--radius-sm);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.matrix-cell.tp, .matrix-cell.tn {
+  background-color: #ECFDF5;
+  border-color: #A7F3D0;
+}
+
+.matrix-cell.fp, .matrix-cell.fn {
+  background-color: #FEF2F2;
+  border-color: #FECACA;
+}
+
+.matrix-header {
+  font-weight: 700;
+  color: var(--ink-secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ==========================================================================
+   DRIFT & PORTFOLIO ANALYTICS (Facility 4)
+   ========================================================================== */
+
+.psi-meter {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 1.5rem;
+  background-color: var(--bg-card-subtle);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-light);
+}
+
+.psi-score-circle {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background-color: #FFFFFF;
+  border: 4px solid var(--brand-green);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-mono);
+  font-weight: 800;
+  font-size: 1.25rem;
+  color: var(--ink-primary);
+  box-shadow: 0 2px 8px rgba(16, 185, 129, 0.2);
+}
+
+.psi-status-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--ink-primary);
+}
+
+.psi-status-sub {
+  font-size: 0.85rem;
+  color: var(--ink-muted);
+  margin-top: 0.25rem;
+}
+
+/* Technology Stack Ribbon */
+.tech-stack-ribbon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.65rem;
+  flex-wrap: wrap;
+  padding: 1.5rem 0;
+  margin-top: 3rem;
+  border-top: 1px solid var(--border-light);
+}
+
+.tech-chip {
+  font-size: 0.75rem;
+  font-family: var(--font-mono);
+  font-weight: 600;
+  color: var(--ink-secondary);
+  background-color: #FFFFFF;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-sm);
+  padding: 0.35rem 0.75rem;
+}
